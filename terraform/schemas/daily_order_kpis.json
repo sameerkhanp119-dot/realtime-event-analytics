@@ -1,0 +1,12 @@
+[
+  {"name": "kpi_date", "type": "DATE", "mode": "REQUIRED"},
+  {"name": "orders_created", "type": "INTEGER", "mode": "REQUIRED"},
+  {"name": "active_customers", "type": "INTEGER", "mode": "REQUIRED"},
+  {"name": "gross_order_value", "type": "NUMERIC", "mode": "REQUIRED"},
+  {"name": "payments_completed", "type": "INTEGER", "mode": "REQUIRED"},
+  {"name": "payments_failed", "type": "INTEGER", "mode": "REQUIRED"},
+  {"name": "revenue", "type": "NUMERIC", "mode": "REQUIRED"},
+  {"name": "payment_success_rate", "type": "FLOAT", "mode": "NULLABLE"},
+  {"name": "average_order_value", "type": "NUMERIC", "mode": "NULLABLE"},
+  {"name": "updated_at", "type": "TIMESTAMP", "mode": "REQUIRED"}
+]

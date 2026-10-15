@@ -1,0 +1,10 @@
+[
+  {"name": "window_start", "type": "TIMESTAMP", "mode": "REQUIRED"},
+  {"name": "window_end", "type": "TIMESTAMP", "mode": "REQUIRED"},
+  {"name": "orders_created", "type": "INTEGER", "mode": "REQUIRED"},
+  {"name": "gross_order_value", "type": "NUMERIC", "mode": "REQUIRED"},
+  {"name": "payments_completed", "type": "INTEGER", "mode": "REQUIRED"},
+  {"name": "payments_failed", "type": "INTEGER", "mode": "REQUIRED"},
+  {"name": "revenue", "type": "NUMERIC", "mode": "REQUIRED"},
+  {"name": "payment_success_rate", "type": "FLOAT", "mode": "NULLABLE"}
+]

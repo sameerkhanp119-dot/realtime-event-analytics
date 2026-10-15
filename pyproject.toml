@@ -1,0 +1,10 @@
+[project]
+name = "realtime-event-analytics"
+version = "1.0.0"
+description = "Streaming KPIs for commerce events: Kafka -> Spark Structured Streaming -> BigQuery, with Airflow daily rollups"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning"]
