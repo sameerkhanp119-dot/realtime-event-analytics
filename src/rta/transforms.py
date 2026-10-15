@@ -68,8 +68,15 @@ def parse_events(raw: DataFrame) -> DataFrame:
 
 
 def deduplicate(events: DataFrame) -> DataFrame:
-    """Drops redelivered events (same event_id) while bounding state with an event-time watermark."""
-    return events.withWatermark("occurred_at", LATE_DATA_TOLERANCE).dropDuplicatesWithinWatermark(["event_id"])
+    """Drops redelivered events (same event_id).
+
+    On a stream, state is bounded by an event-time watermark; batch inputs (backfills, tests)
+    have no state to bound, so a plain distinct-by-key is equivalent.
+    """
+    watermarked = events.withWatermark("occurred_at", LATE_DATA_TOLERANCE)
+    if events.isStreaming:
+        return watermarked.dropDuplicatesWithinWatermark(["event_id"])
+    return watermarked.dropDuplicates(["event_id"])
 
 
 def _count(event_type: str) -> Column:
