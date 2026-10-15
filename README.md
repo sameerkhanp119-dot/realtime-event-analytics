@@ -73,7 +73,7 @@ docker compose up --build
 ```
 
 The producer publishes about 20 orders per second (2% re-delivered on purpose, orders over $1,000 declined).
-After a minute, the `spark-streaming` container prints micro-batches of raw events and per-minute KPIs:
+After a minute, the `spark-streaming` container prints micro-batches of raw events and per-minute KPIs (example shape):
 
 ```
 +-------------------+-------------------+--------------+-----------------+------------------+---------------+--------+--------------------+

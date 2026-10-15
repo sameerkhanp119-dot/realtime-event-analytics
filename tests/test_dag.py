@@ -3,7 +3,8 @@ from pathlib import Path
 
 import pytest
 
-pytest.importorskip("airflow")
+# The repo's airflow/ folder is importable as a namespace package, so probe a real Airflow module.
+pytest.importorskip("airflow.models")
 
 from airflow.models import DagBag  # noqa: E402
 
